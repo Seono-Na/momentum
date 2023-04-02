@@ -25,7 +25,7 @@
   --size-border-radius: 4px;
 
   /* Animation */
-  --animation-duration: 300ms;
+  --animation-duration: 1000ms;
 }
 
 /* Universal tags */
@@ -35,6 +35,8 @@
 
 body {
   font-family: "Gamja Flower", cursive;
+  width: 98vw;
+  height: 97vh;
 }
 
 input {
@@ -42,6 +44,12 @@ input {
   border-bottom: 5px solid var(--color-black);
   background-color: transparent;
   text-align: center;
+}
+button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 a {
@@ -58,7 +66,21 @@ video {
   opacity: 60%;
 }
 
+.hidden {
+  display: none;
+}
+.visuallyhidden {
+  opacity: 0;
+}
+
 /* First page */
+section {
+  width: 95vw;
+  height: 95%h;
+  transition: all 1s linear;
+  z-index: 1;
+}
+
 div.login-contents {
   display: flex;
   flex-direction: column;
@@ -73,6 +95,12 @@ div.login-contents {
   flex-direction: column;
   align-items: center;
 }
+
+.today {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
 .today::after {
   content: "";
   display: block;
@@ -85,11 +113,6 @@ div.login-contents {
   background-color: var(--color-orange);
 }
 
-.today {
-  font-size: 4rem;
-  margin: 0;
-}
-
 .clock {
   font-size: 10rem;
   margin: 0;
@@ -100,14 +123,44 @@ div.login-contents {
   font-size: 2rem;
 }
 .login-form > h2 {
+  margin-top: -5%;
   margin-bottom: 0;
 }
 
 .input-form {
   display: flex;
   justify-content: center;
+  translate: 6%;
+  margin-bottom: 30%;
 }
 
 .user-name {
-  font-size: 1.3rem;
+  font-size: 3rem;
+  margin-top: 10%;
+  width: 18vw;
+}
+
+.login-btn {
+  font-size: 2.5rem;
+  margin-top: 10%;
+}
+
+/* Greeting */
+/* .greeting {
+  transition: all var(--animation-duration) ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 93vh;
+} */
+.greeting-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 93vh;
+}
+.greeting-hello {
+  font-size: 5rem;
 }

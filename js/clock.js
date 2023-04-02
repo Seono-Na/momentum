@@ -22,7 +22,7 @@ function getTodaty() {
   const date = String(today.getDate()).padStart(2, "0");
   const day = today.getDay(); // number
 
-  todays.innerText = `${month} ${date} ${week[day]}`;
+  todays.innerText = `${month}.${date} ${week[day]}`;
 }
 
 getTodaty();

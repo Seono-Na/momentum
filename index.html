@@ -26,25 +26,29 @@
     <section id="background">
       <video class="" autoplay loop muted></video>
     </section>
-    <section id="login">
+    <section id="login" class="hidden">
       <div class="login-contents">
         <div class="clock-box">
           <p class="today">04 02 SUN</p>
           <p class="clock">00:00:00</p>
         </div>
-        <div class="login-form hidden fadeOut">
+        <div class="login-form">
           <h2>What your name?</h2>
           <form class="input-form">
             <input class="user-name" required maxlength="15" type="text" />
-            <a href="" class="login-btn">
-              <i class="fa-solid fa-right-to-bracket" type="submit"></i>
-            </a>
+            <button class="login-btn" type="submit">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
           </form>
         </div>
-        <p class="greeting"></p>
       </div>
     </section>
-    <section id="main-contents">
+    <section id="greeting" class="hidden visuallyhidden">
+      <div class="greeting-box">
+        <h1 class="greeting-hello">Hello ㅇㅇ!</h1>
+      </div>
+    </section>
+    <section id="main-contents" class="hidden visuallyhidden">
       <div class="logout">
         <span class="user-page">ㅇㅇ's page</span>
         <button>
@@ -57,7 +61,7 @@
         <div class="quote"></div>
       </article>
     </section>
-    <section class="small">
+    <section id="small" class="hidden">
       <h1>Page is too small</h1>
     </section>
   </body>
