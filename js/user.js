@@ -7,6 +7,7 @@ const greeting = document.querySelector("section#greeting");
 const greetingHello = document.querySelector("h1.greeting-hello");
 const mainContents = document.querySelector("section#main-contents");
 const userPage = document.querySelector("span.user-page");
+const logoutBtn = document.querySelector(".logout-btn");
 
 const HIDDEN_CLASSNAME = "hidden";
 const VISUALHIDDEN_CLASSNAME = "visuallyhidden";
@@ -62,3 +63,20 @@ function main() {
   }
 }
 main();
+
+function refresh() {
+  mainContents.classList.add(HIDDEN_CLASSNAME);
+  mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
+  loginSection.classList.remove(HIDDEN_CLASSNAME);
+  loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
+  inputUserName.value = "";
+  main();
+}
+
+function logout() {
+  localStorage.clear();
+  console.log(localStorage);
+  refresh();
+}
+
+logoutBtn.addEventListener("click", logout);
