@@ -6,6 +6,7 @@ const inputUserName = document.querySelector("input.user-name");
 const greeting = document.querySelector("section#greeting");
 const greetingHello = document.querySelector("h1.greeting-hello");
 const mainContents = document.querySelector("section#main-contents");
+const userPage = document.querySelector("span.user-page");
 
 const HIDDEN_CLASSNAME = "hidden";
 const VISUALHIDDEN_CLASSNAME = "visuallyhidden";
@@ -24,6 +25,7 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   greetingHello.innerText = `Hello ${username}~ 😊`;
+  userPage.innerText = `${username}'s page :D`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   console.log("greeting 히든없애고");
   greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
@@ -42,11 +44,13 @@ function fadeout() {
 
 function fadein() {
   setTimeout(() => {
-    greeting.classList.add(HIDDEN_CLASSNAME);
-    console.log("greeting 히든 줘버리기");
-  }, 4000);
-  mainContents.classList.remove(HIDDEN_CLASSNAME);
-  mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
+    setTimeout(() => {
+      greeting.classList.add(HIDDEN_CLASSNAME);
+      console.log("greeting 히든 줘버리기");
+    }, 1000);
+    mainContents.classList.remove(HIDDEN_CLASSNAME);
+    mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
+  }, 5000);
 }
 
 function main() {
