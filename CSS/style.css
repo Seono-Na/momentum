@@ -164,3 +164,15 @@ div.login-contents {
 .greeting-hello {
   font-size: 5rem;
 }
+
+/* Userpage */
+.logout {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Article */
+article.main {
+  display: flex;
+  justify-content: space-evenly;
+}
