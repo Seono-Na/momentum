@@ -1,11 +1,11 @@
 "use strict";
-const API_KEY = "0dbc920b61c5857163244bc5a0c06222";
+const ok = "0dbc920b61c5857163244bc5a0c06222";
 
 function onGeoOK(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
   console.log("You live in", lat, lon);
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=kr&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${ok}&lang=kr&units=metric`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
