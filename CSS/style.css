@@ -1,0 +1,113 @@
+:root {
+  /* color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-black: #000000;
+  --color-orange: #e44d26;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gamja Flower", cursive;
+}
+
+input {
+  border: none;
+  border-bottom: 5px solid var(--color-black);
+  background-color: transparent;
+  text-align: center;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+video {
+  position: absolute;
+  width: 99vw;
+  height: 98vh;
+  object-fit: fill;
+  z-index: -1;
+  opacity: 60%;
+}
+
+/* First page */
+div.login-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 93vh;
+}
+
+/* Clock */
+.clock-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.today::after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background-color: var(--color-orange);
+}
+
+.today {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.clock {
+  font-size: 10rem;
+  margin: 0;
+}
+
+/* Login */
+.login-form {
+  font-size: 2rem;
+}
+.login-form > h2 {
+  margin-bottom: 0;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+}
+
+.user-name {
+  font-size: 1.3rem;
+}
