@@ -178,10 +178,15 @@ section#main-contents {
   flex-direction: row-reverse;
   font-size: 2rem;
   padding-right: 15px;
+  justify-content: space-between;
 }
 .logout-btn {
   padding-top: 10px;
   font-size: 2rem;
+}
+
+.bgchange {
+  cursor: pointer;
 }
 
 /* Article */
