@@ -258,5 +258,9 @@ ul#todo-list {
   section#small {
     width: 98vw;
     height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
   }
 }
