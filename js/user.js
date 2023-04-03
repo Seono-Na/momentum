@@ -25,12 +25,12 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  greetingHello.innerText = `Hello ${username}~ 😊`;
-  userPage.innerText = `${username}'s page :D`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
-  console.log("greeting 히든없애고");
-  greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
-  console.log("greeting 비주얼히든 없애기");
+  setTimeout(() => {
+    greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
+    setTimeout(() => {}, 1000);
+    greetingHello.innerText = `Hello ${username}~ 😊`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+  }, 2000);
 
   fadeout();
 }
@@ -38,7 +38,6 @@ function paintGreetings(username) {
 function fadeout() {
   setTimeout(() => {
     greeting.classList.add(VISUALHIDDEN_CLASSNAME);
-    console.log("greeting 비주얼히든 주고");
   }, 3000);
   fadein();
 }
@@ -47,35 +46,41 @@ function fadein() {
   setTimeout(() => {
     setTimeout(() => {
       greeting.classList.add(HIDDEN_CLASSNAME);
-      console.log("greeting 히든 줘버리기");
     }, 1000);
+    userPage.innerText = `${savedUsername}'s page :D`;
     mainContents.classList.remove(HIDDEN_CLASSNAME);
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
   }, 5000);
 }
 
 function main() {
-  if (savedUsername === null) {
-    loginSection.classList.remove(HIDDEN_CLASSNAME);
-    loginSection.addEventListener("submit", onLoginSubmit);
-  } else {
-    paintGreetings(savedUsername);
-  }
+  setTimeout(() => {
+    if (savedUsername === null) {
+      loginSection.classList.remove(HIDDEN_CLASSNAME);
+      loginSection.addEventListener("submit", onLoginSubmit);
+    } else {
+      paintGreetings(savedUsername);
+    }
+  }, 1000);
 }
 main();
 
 function refresh() {
-  mainContents.classList.add(HIDDEN_CLASSNAME);
   mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
-  loginSection.classList.remove(HIDDEN_CLASSNAME);
-  loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
-  inputUserName.value = "";
-  main();
+  setTimeout(() => {
+    setTimeout(() => {
+      inputUserName.value = "";
+      loginSection.classList.remove(HIDDEN_CLASSNAME);
+      loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
+    }, 1000);
+    mainContents.classList.add(HIDDEN_CLASSNAME);
+
+    main();
+  }, 2000);
 }
 
 function logout() {
   localStorage.clear();
-  console.log(localStorage);
   refresh();
 }
 
