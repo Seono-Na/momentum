@@ -117,6 +117,9 @@ div.login-contents {
   font-size: 10rem;
   margin: 0;
 }
+.clock.mini {
+  font-size: 2.2rem;
+}
 
 /* Login */
 .login-form {
