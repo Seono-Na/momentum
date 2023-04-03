@@ -14,7 +14,7 @@ function onGeoOK(position) {
       console.log(data.name);
       console.log(typeof data.name);
       city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+      weather.innerText = `${data.weather[0].main} / ${Math.round(data.main.temp)}˚`;
     });
 }
 
