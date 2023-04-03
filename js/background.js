@@ -1,21 +1,5 @@
 "use strict";
 
-// const bgvideo = document.querySelector("video");
-// const windowWidth = window.innerWidth;
-// const windowheight = window.innerHeight;
-
-// function resize() {
-//     console.log("bgvideo sidth" + bgvideo.offsetWidth);
-//     console.log("windowwidth " + windowWidth);
-//     if (bgvideo.offsetWidth < windowWidth) {
-//       bgvideo.style.width = String(windowWidth) + "px";
-//     } else
-//   if (bgvideo.offsetHeight > windowheight) {
-//     bgvideo.style.height = String(windowheight) + "px";
-//   }
-// }
-
-// window.addEventListener("resize", resize);
 const videos = [
   "01.mp4",
   "02.mp4",
@@ -29,10 +13,28 @@ const videos = [
   "10.mp4",
 ];
 const video = document.querySelector("video");
-const rdvideo = videos[Math.floor(Math.random() * videos.length)];
+let rdvideo = videos[Math.floor(Math.random() * videos.length)];
+const bgChange = document.querySelector(".bgchange");
 
 const bgVideoSource = document.createElement("source");
 
 bgVideoSource.src = `img/${rdvideo}`;
 
 video.appendChild(bgVideoSource);
+
+
+
+function changeBg() {
+  rdvideo = videos[Math.floor(Math.random() * videos.length)];
+  video.removeChild(bgVideoSource);
+  bgVideoSource.src = `img/${rdvideo}`;
+
+  video.appendChild(bgVideoSource);
+  video.load()
+  video.play()
+}
+
+bgChange.addEventListener("click", changeBg);
+
+
+

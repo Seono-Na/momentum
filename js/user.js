@@ -25,12 +25,10 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  setTimeout(() => {
-    greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
-    setTimeout(() => {}, 1000);
-    greetingHello.innerText = `Hello ${username}~ 😊`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-  }, 2000);
+  greetingHello.innerText = `Hello ${username}~ 😊`;
+  userPage.innerText = `${username}'s page ✋ `;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
 
   fadeout();
 }
@@ -38,19 +36,18 @@ function paintGreetings(username) {
 function fadeout() {
   setTimeout(() => {
     greeting.classList.add(VISUALHIDDEN_CLASSNAME);
-  }, 3000);
-  fadein();
+    fadein();
+  }, 2000);
 }
 
 function fadein() {
   setTimeout(() => {
     setTimeout(() => {
       greeting.classList.add(HIDDEN_CLASSNAME);
-    }, 1000);
-    userPage.innerText = `${savedUsername}'s page :D`;
+    }, 1500);
     mainContents.classList.remove(HIDDEN_CLASSNAME);
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
-  }, 5000);
+  }, 2000);
 }
 
 function main() {
@@ -66,17 +63,12 @@ function main() {
 main();
 
 function refresh() {
+  mainContents.classList.add(HIDDEN_CLASSNAME);
   mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
-  setTimeout(() => {
-    setTimeout(() => {
-      inputUserName.value = "";
-      loginSection.classList.remove(HIDDEN_CLASSNAME);
-      loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
-    }, 1000);
-    mainContents.classList.add(HIDDEN_CLASSNAME);
-
-    main();
-  }, 2000);
+  loginSection.classList.remove(HIDDEN_CLASSNAME);
+  loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
+  inputUserName.value = "";
+  main();
 }
 
 function logout() {
