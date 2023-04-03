@@ -243,10 +243,13 @@ ul#todo-list {
   grid-column: 1/5;
   grid-row: 10/11;
   font-size: 1.2rem;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-regular);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.first-span {
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 768px) {
