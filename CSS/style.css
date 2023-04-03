@@ -179,6 +179,10 @@ section#main-contents {
   font-size: 2rem;
   padding-right: 15px;
 }
+.logout-btn {
+  padding-top: 10px;
+  font-size: 2rem;
+}
 
 /* Article */
 article.main {
