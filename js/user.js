@@ -36,18 +36,18 @@ function paintGreetings(username) {
 function fadeout() {
   setTimeout(() => {
     greeting.classList.add(VISUALHIDDEN_CLASSNAME);
-  }, 3000);
-  fadein();
+    fadein();
+  }, 2000);
 }
 
 function fadein() {
   setTimeout(() => {
     setTimeout(() => {
       greeting.classList.add(HIDDEN_CLASSNAME);
-    }, 1000);
+    }, 1500);
     mainContents.classList.remove(HIDDEN_CLASSNAME);
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
-  }, 5000);
+  }, 2000);
 }
 
 function main() {
