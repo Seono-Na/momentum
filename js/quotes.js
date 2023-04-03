@@ -50,10 +50,14 @@ const quotes = [
 
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
-setInterval(() => {
 
+let createQuote = (() => {
   const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
   quote.innerText = todayQuote.quote;
   author.innerText = ` - ${todayQuote.author}`;
+})
+createQuote()
+
+setInterval(() => {
+  createQuote()
 }, 15000);
