@@ -26,11 +26,9 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   greetingHello.innerText = `Hello ${username}~ 😊`;
-  userPage.innerText = `${username}'s page :D`;
+  userPage.innerText = `${username}'s page :D `;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  console.log("greeting 히든없애고");
   greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
-  console.log("greeting 비주얼히든 없애기");
 
   fadeout();
 }
@@ -38,7 +36,6 @@ function paintGreetings(username) {
 function fadeout() {
   setTimeout(() => {
     greeting.classList.add(VISUALHIDDEN_CLASSNAME);
-    console.log("greeting 비주얼히든 주고");
   }, 3000);
   fadein();
 }
@@ -47,7 +44,6 @@ function fadein() {
   setTimeout(() => {
     setTimeout(() => {
       greeting.classList.add(HIDDEN_CLASSNAME);
-      console.log("greeting 히든 줘버리기");
     }, 1000);
     mainContents.classList.remove(HIDDEN_CLASSNAME);
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
@@ -75,7 +71,6 @@ function refresh() {
 
 function logout() {
   localStorage.clear();
-  console.log(localStorage);
   refresh();
 }
 
