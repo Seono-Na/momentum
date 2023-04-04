@@ -52,7 +52,7 @@ function fadein() {
   mainContents.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
-  }, 2000);
+  }, 1000);
 }
 
 function main() {
