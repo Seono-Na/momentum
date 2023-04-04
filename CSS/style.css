@@ -260,20 +260,30 @@ ul#todo-list {
   flex-direction: column;
   justify-content: space-around;
 }
-#linkpage img {
-  /* display: none; */
+.link-icon {
   width: 4vw;
   height: 4vw;
   border-radius: 50%;
+  margin-right: 0.6vw;
 }
 .icon-wrap {
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 4.6vw;
+  height: 4.6vw;
+  border-radius: 2vw;
+  cursor: pointer;
+}
+.mouseover-icon {
+  width: 18vw;
+  background-color: blanchedalmond;
+  padding: 0.6vw;
 }
 .icon-description {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   width: 13vw;
   height: 4vw;
   justify-content: center;
