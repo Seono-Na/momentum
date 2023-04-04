@@ -68,12 +68,19 @@ function main() {
 main();
 
 function refresh() {
-  mainContents.classList.add(HIDDEN_CLASSNAME);
   mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
-  loginSection.classList.remove(HIDDEN_CLASSNAME);
-  loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
-  inputUserName.value = "";
-  main();
+  setTimeout(() => {
+    mainContents.classList.add(HIDDEN_CLASSNAME);
+  }, 1000);
+  setTimeout(() => {
+    loginSection.classList.remove(HIDDEN_CLASSNAME);
+    setTimeout(() => {
+      loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
+    }, 1000);
+    inputUserName.value = "";
+    main();
+  }, 1000);
+
 }
 
 function logout() {
