@@ -12,14 +12,14 @@ function getClock() {
   let ampmHours = hours;
   let ampm = "";
   if (hours > 12) {
-    ampmHours = String(parseInt(ampmHours) - 12);
+    ampmHours = String(parseInt(ampmHours) - 12).padStart(2, "0");
     ampm = "PM";
   } else {
     ampm = "AM";
   }
 
   clock.innerText = `${hours}:${minutes}:${seconds}`;
-  miniClock.innerText = `${ampm} ${ampmHours}:${minutes}:${seconds}`;
+  miniClock.innerText = `⏰${ampm} ${ampmHours}:${minutes}:${seconds}`;
 }
 
 getClock();
