@@ -119,7 +119,7 @@ div.login-contents {
 }
 .clock.mini {
   font-size: 2.2rem;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semi-bold);
 }
 
 /* Login */
