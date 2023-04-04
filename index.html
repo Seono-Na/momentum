@@ -20,12 +20,16 @@
     <script defer src="js/todo.js"></script>
     <script defer src="js/user.js"></script>
     <script defer src="js/weather.js"></script>
+    <script defer src="js/linkicon.js"></script>
   </head>
 
   <body>
+    <!-- Background -->
     <section id="background">
-      <video class="" autoplay loop muted></video>
+      <video autoplay loop muted></video>
     </section>
+
+    <!-- Login -->
     <section id="login" class="hidden">
       <div class="login-contents">
         <div class="clock-box">
@@ -43,12 +47,17 @@
         </div>
       </div>
     </section>
+
+    <!-- Greeting -->
     <section id="greeting" class="hidden visuallyhidden">
       <div class="greeting-box">
         <h1 class="greeting-hello">Hello ㅇㅇ!</h1>
       </div>
     </section>
+
+    <!-- Main -->
     <section id="main-contents" class="hidden visuallyhidden">
+      <!-- navbar -->
       <div class="logout">
         <div class="user-status">
           <span class="user-page">ㅇㅇ's page</span>
@@ -66,43 +75,53 @@
           <span>Background Change</span>
         </div>
       </div>
+      <!-- main container -->
       <article class="main">
+        <!-- weather box -->
         <div id="weather">
           <span></span>
           <span></span>
         </div>
+        <!-- link box -->
         <div id="linkpage">
-          <div>
-            <div class="icon-wrap">
-              <img src="/img/icons/nomadcoder.png" alt="" />
-              <div class="icon-description"><p>NOMADECODER</p></div>
-            </div>
+          <div class="icon-wrap">
+            <img
+              class="link-icon"
+              src="/img/icons/nomadcoder.png"
+              alt="nomad"
+            />
+            <div class="icon-description"><p>NOMADECODER</p></div>
           </div>
-          <div>
-            <div class="icon-wrap">
-              <img src="/img/icons/googleicon.png" alt="" />
-              <div class="icon-description"><p>GOOGLE</p></div>
-            </div>
+          <div class="icon-wrap">
+            <img
+              class="link-icon"
+              src="/img/icons/googleicon.png"
+              alt="google"
+            />
+            <div class="icon-description"><p>GOOGLE</p></div>
           </div>
-          <div>
-            <div class="icon-wrap">
-              <img src="/img/icons/navericon.png" alt="" />
-              <div class="icon-description"><p>NAVER</p></div>
-            </div>
+          <div class="icon-wrap">
+            <img class="link-icon" src="/img/icons/navericon.png" alt="naver" />
+            <div class="icon-description"><p>NAVER</p></div>
           </div>
-          <div>
-            <div class="icon-wrap">
-              <img src="/img/icons/youtubeicon.png" alt="" />
-              <div class="icon-description"><p>YOUTUBE</p></div>
-            </div>
+          <div class="icon-wrap">
+            <img
+              class="link-icon"
+              src="/img/icons/youtubeicon.png"
+              alt="youtube"
+            />
+            <div class="icon-description"><p>YOUTUBE</p></div>
           </div>
-          <div>
-            <div class="icon-wrap">
-              <img src="/img/icons/githubicon.png" alt="" />
-              <div class="icon-description"><p>GITHUB</p></div>
-            </div>
+          <div class="icon-wrap">
+            <img
+              class="link-icon"
+              src="/img/icons/githubicon.png"
+              alt="github"
+            />
+            <div class="icon-description"><p>GITHUB</p></div>
           </div>
         </div>
+        <!-- to do list -->
         <div id="todo">
           <div class="todo-title">
             <h1>To Do List📌</h1>
@@ -116,11 +135,14 @@
             required
           />
         </form>
+        <!-- quotes box -->
         <div id="quote">
           <span class="first-span"></span><span class="last-span"></span>
         </div>
       </article>
     </section>
+
+    <!-- Message Too small -->
     <section id="small" class="hidden">
       <h1>Page is too small :(</h1>
     </section>
