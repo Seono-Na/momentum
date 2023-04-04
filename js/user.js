@@ -20,32 +20,37 @@ function onLoginSubmit(event) {
   loginSection.classList.add(VISUALHIDDEN_CLASSNAME);
   const username = inputUserName.value;
   localStorage.setItem(USERNAME_KEY, username);
-  loginSection.classList.add(HIDDEN_CLASSNAME);
-  paintGreetings(username);
+  loginSection.classList.add(VISUALHIDDEN_CLASSNAME)
+  setTimeout(() => {
+
+    loginSection.classList.add(HIDDEN_CLASSNAME);
+    paintGreetings(username);
+  }, 1000);
 }
 
 function paintGreetings(username) {
   greetingHello.innerText = `Hello ${username}~ 😊`;
   userPage.innerText = `${username}'s page ✋ `;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
-
-  fadeout();
+  setTimeout(() => {
+    greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
+  }, 1000);
+  setTimeout(() => {
+    fadeout();
+  }, 3000);
 }
 
 function fadeout() {
+  greeting.classList.add(VISUALHIDDEN_CLASSNAME);
   setTimeout(() => {
-    greeting.classList.add(VISUALHIDDEN_CLASSNAME);
     fadein();
-  }, 2000);
+  }, 1000);
 }
 
 function fadein() {
+  greeting.classList.add(HIDDEN_CLASSNAME);
+  mainContents.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
-    setTimeout(() => {
-      greeting.classList.add(HIDDEN_CLASSNAME);
-    }, 1500);
-    mainContents.classList.remove(HIDDEN_CLASSNAME);
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
   }, 2000);
 }
