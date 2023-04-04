@@ -266,18 +266,32 @@ ul#todo-list {
   height: 4vw;
   border-radius: 50%;
 }
+.link-github {
+}
+.link-google {
+}
+.link-naver {
+}
+.link-youtube {
+}
+.link-nomad {
+}
+
 .icon-wrap {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  z-index: 1;
 }
 .icon-description {
   display: flex;
-  font-size: 1.2rem;
-  width: 13vw;
-  height: 4vw;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
+  background-color: blanchedalmond;
+  width: 13vw;
+  height: 4vw;
+  border-radius: 2vw;
 }
 
 #quote {
