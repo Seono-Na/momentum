@@ -18,6 +18,15 @@ function deleteToDo(event) {
   saveToDos();
 }
 
+const clearBtn = document.querySelector("#todo-remove>h3");
+function deleteToDoAll() {
+  toDos.length = 0
+  localStorage.setItem("todos", JSON.stringify(toDos));
+  toDoList.innerHTML = "";
+  console.log("dkdkdkdkdk")
+}
+clearBtn.addEventListener("click", deleteToDoAll)
+
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
