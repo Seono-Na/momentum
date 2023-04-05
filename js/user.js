@@ -56,28 +56,28 @@ function fadein() {
 }
 
 function main() {
-  setTimeout(() => {
-    if (savedUsername === null) {
-      loginSection.classList.remove(HIDDEN_CLASSNAME);
-      loginSection.addEventListener("submit", onLoginSubmit);
-    } else {
-      paintGreetings(savedUsername);
-    }
-  }, 1000);
-}
-main();
-
-function refresh() {
-  mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
-  setTimeout(() => {
-    mainContents.classList.add(HIDDEN_CLASSNAME);
-  }, 1000);
-  setTimeout(() => {
+  if (savedUsername === null) {
     loginSection.classList.remove(HIDDEN_CLASSNAME);
     setTimeout(() => {
       loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
     }, 1000);
-    inputUserName.value = "";
+    loginSection.addEventListener("submit", onLoginSubmit);
+  } else {
+    paintGreetings(savedUsername);
+  }
+}
+
+main();
+
+function refresh() {
+  mainContents.classList.add(VISUALHIDDEN_CLASSNAME);
+  inputUserName.value = "";
+  setTimeout(() => {
+    mainContents.classList.add(HIDDEN_CLASSNAME);
+    loginSection.classList.remove(HIDDEN_CLASSNAME);
+    setTimeout(() => {
+      loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
+    }, 1000);
     main();
   }, 1000);
 
