@@ -13,7 +13,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const VISUALHIDDEN_CLASSNAME = "visuallyhidden";
 const USERNAME_KEY = "username";
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
+let savedUsername = localStorage.getItem(USERNAME_KEY);
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -22,7 +22,6 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);
   loginSection.classList.add(VISUALHIDDEN_CLASSNAME)
   setTimeout(() => {
-
     loginSection.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(username);
   }, 1000);
@@ -56,6 +55,7 @@ function fadein() {
 }
 
 function main() {
+  let savedUsername = localStorage.getItem(USERNAME_KEY);
   if (savedUsername === null) {
     loginSection.classList.remove(HIDDEN_CLASSNAME);
     setTimeout(() => {
@@ -74,10 +74,6 @@ function refresh() {
   inputUserName.value = "";
   setTimeout(() => {
     mainContents.classList.add(HIDDEN_CLASSNAME);
-    loginSection.classList.remove(HIDDEN_CLASSNAME);
-    setTimeout(() => {
-      loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
-    }, 1000);
     main();
   }, 1000);
 
