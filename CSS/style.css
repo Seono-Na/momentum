@@ -295,7 +295,7 @@ ul#todo-list {
   box-shadow: 200px 0 0 0 blanchedalmond inset;
 }
 .icon-description {
-  display: flex;
+  display: none;
   font-size: 1.5rem;
   width: 13vw;
   height: 4vw;
