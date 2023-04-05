@@ -260,38 +260,36 @@ ul#todo-list {
   flex-direction: column;
   justify-content: space-around;
 }
-#linkpage img {
-  /* display: none; */
+.link-icon {
   width: 4vw;
   height: 4vw;
   border-radius: 50%;
+  margin-right: 0.6vw;
 }
-.link-github {
-}
-.link-google {
-}
-.link-naver {
-}
-.link-youtube {
-}
-.link-nomad {
-}
-
 .icon-wrap {
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
-  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  width: 4.6vw;
+  height: 4.6vw;
+  border-radius: 2vw;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.mouseover-icon {
+  width: 18vw;
+  background-color: blanchedalmond;
+  padding: 0.6vw;
+  box-shadow: 200px 0 0 0 blanchedalmond inset;
 }
 .icon-description {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  background-color: blanchedalmond;
+  font-size: 1.5rem;
   width: 13vw;
   height: 4vw;
-  border-radius: 2vw;
+  justify-content: center;
+  align-items: center;
 }
 
 #quote {
