@@ -305,7 +305,7 @@ ul#todo-list {
   font-size: 1.4rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (max-height: 480px) {
   section#login,
   section#greeting,
   section#main-contents {
