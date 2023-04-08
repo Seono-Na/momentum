@@ -13,22 +13,21 @@ function saveToDos() {
 
 function doneToDo(event) {
   const todoItem = event.target.previousElementSibling;
-  todoItem.classList.toggle("todoDone");
+  todoItem.classList.toggle("todoDone"); // toggle todoDone
   const li = event.target.parentElement;
-  console.log(toDos, li);
-  console.log(typeof li.id);
-  const localToDo = JSON.parse(localStorage.getItem("todos"));
-  console.log(typeof localToDo);
+  const localToDo = JSON.parse(localStorage.getItem("todos")); //localStorage에서 todos 가지고 와서 새로운 변수에 담아주기
+  // localStorage에서 id가 일치하는 부분 찾기 위한 for문
   for (let i = 0; i < localToDo.length; i++) {
+    // 만약 li의 id와 일치한다면
     if (localToDo[i].id === parseInt(li.id)) {
-      if (localToDo[i].done == 0) {
+      // done 키의 값을 변경 (0과 1)
+      if (localToDo[i].done === 0) {
         localToDo[i].done = 1;
       } else {
         localToDo[i].done = 0;
       }
-      toDos = localToDo;
-      saveToDos();
-      console.log(localToDo);
+      toDos = localToDo; //toDos에 바뀐 값(done) 넣어주기
+      saveToDos(); //localStorage에 toDos저장하는 함수
     }
   }
 }
