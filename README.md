@@ -20,6 +20,7 @@ Web service like ChromeApp "Momentum"
 - Linkbox
 - Quotes
   - Renew every 15 seconds
+- Change Background
 
 ### Caution
 
