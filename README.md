@@ -1,7 +1,11 @@
 # momentum
-## This is "To Do list" webservice
+
+## This is a "To Do list" webservice
+
 Web service like ChromeApp "Momentum"
+
 ### Fuction
+
 - To Do List
   - Add list
   - Done
@@ -15,5 +19,7 @@ Web service like ChromeApp "Momentum"
 - Linkbox
 - Quotes
   - Renew every 15 seconds
+
 ### Last update
+
 2023-04-08
