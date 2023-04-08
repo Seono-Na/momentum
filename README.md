@@ -13,10 +13,10 @@ Web service like ChromeApp "Momentum"
   - List clear
   - Remember user and to do list
 - Clock
-- Weather API
+- Geocording API
+  - Location
   - Weather
   - Temperatures
-  - Location
 - Linkbox
 - Quotes
   - Renew every 15 seconds
