@@ -44,6 +44,7 @@ input {
   border-bottom: 5px solid var(--color-black);
   background-color: transparent;
   text-align: center;
+  outline: none;
 }
 button {
   border: none;
