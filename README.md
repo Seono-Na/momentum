@@ -11,6 +11,7 @@ Web service like ChromeApp "Momentum"
   - Done
   - Delete
   - List clear
+  - Remember user and to do list
 - Clock
 - Weather API
   - Weather
@@ -19,6 +20,12 @@ Web service like ChromeApp "Momentum"
 - Linkbox
 - Quotes
   - Renew every 15 seconds
+
+### Caution
+
+When logging out, all lists are cleared.
+
+This service will not be responsible for that.
 
 ### Last update
 
