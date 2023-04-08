@@ -150,15 +150,6 @@ div.login-contents {
   margin-top: 10%;
 }
 
-/* Greeting */
-/* .greeting {
-  transition: all var(--animation-duration) ease-in;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 93vh;
-} */
 .greeting-box {
   display: flex;
   flex-direction: column;
@@ -241,6 +232,7 @@ div.todo-title {
 }
 #todo-remove > h3 {
   cursor: pointer;
+  font-size: 1.5rem;
 }
 form#todo-form {
   grid-column: 2/5;
