@@ -11,6 +11,11 @@ function saveToDos() {
   localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
+function doneToDo(event) {
+  const todoItem = event.target.previousElementSibling;
+  todoItem.classList.toggle("todoDone");
+}
+
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
@@ -20,23 +25,26 @@ function deleteToDo(event) {
 
 const clearBtn = document.querySelector("#todo-remove>h3");
 function deleteToDoAll() {
-  toDos.length = 0
+  toDos.length = 0;
   localStorage.setItem("todos", JSON.stringify(toDos));
   toDoList.innerHTML = "";
-  console.log("dkdkdkdkdk")
 }
-clearBtn.addEventListener("click", deleteToDoAll)
+clearBtn.addEventListener("click", deleteToDoAll);
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const btnDone = document.createElement("button");
+  btnDone.innerText = "✔️";
+  btnDone.addEventListener("click", doneToDo);
+  const btnDelete = document.createElement("button");
+  btnDelete.innerText = "❌";
+  btnDelete.addEventListener("click", deleteToDo);
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(btnDone);
+  li.appendChild(btnDelete);
   toDoList.appendChild(li);
 }
 
