@@ -14,6 +14,23 @@ function saveToDos() {
 function doneToDo(event) {
   const todoItem = event.target.previousElementSibling;
   todoItem.classList.toggle("todoDone");
+  const li = event.target.parentElement;
+  console.log(toDos, li);
+  console.log(typeof li.id);
+  const localToDo = JSON.parse(localStorage.getItem("todos"));
+  console.log(typeof localToDo);
+  for (let i = 0; i < localToDo.length; i++) {
+    if (localToDo[i].id === parseInt(li.id)) {
+      if (localToDo[i].done == 0) {
+        localToDo[i].done = 1;
+      } else {
+        localToDo[i].done = 0;
+      }
+      toDos = localToDo;
+      saveToDos();
+      console.log(localToDo);
+    }
+  }
 }
 
 function deleteToDo(event) {
@@ -36,6 +53,9 @@ function paintToDo(newTodo) {
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
+  if (newTodo.done === 1) {
+    span.classList.add("todoDone");
+  }
   const btnDone = document.createElement("button");
   btnDone.innerText = "✔️";
   btnDone.addEventListener("click", doneToDo);
@@ -55,6 +75,7 @@ function handleToDoSubmit(event) {
   const newTodoObj = {
     text: newTodo,
     id: Date.now(),
+    done: 0,
   };
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);
