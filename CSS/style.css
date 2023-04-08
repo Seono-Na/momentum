@@ -227,6 +227,9 @@ div.todo-title {
   display: flex;
   justify-content: center;
 }
+.todoDone {
+  text-decoration-line: line-through;
+}
 #todo-remove {
   grid-column: 4/5;
   grid-row: 2/3;
