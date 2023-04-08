@@ -29,7 +29,7 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   greetingHello.innerText = `Hello ${username}~ 😊`;
-  userPage.innerText = `${username}'s page ✋ `;
+  userPage.innerText = `📖 ${username}'s page `;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
     greeting.classList.remove(VISUALHIDDEN_CLASSNAME);
