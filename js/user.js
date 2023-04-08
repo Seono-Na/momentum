@@ -20,7 +20,7 @@ function onLoginSubmit(event) {
   loginSection.classList.add(VISUALHIDDEN_CLASSNAME);
   const username = inputUserName.value;
   localStorage.setItem(USERNAME_KEY, username);
-  loginSection.classList.add(VISUALHIDDEN_CLASSNAME)
+  loginSection.classList.add(VISUALHIDDEN_CLASSNAME);
   setTimeout(() => {
     loginSection.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(username);
@@ -51,6 +51,7 @@ function fadein() {
   mainContents.classList.remove(HIDDEN_CLASSNAME);
   setTimeout(() => {
     mainContents.classList.remove(VISUALHIDDEN_CLASSNAME);
+    toDoInput.focus();
   }, 1000);
 }
 
@@ -61,6 +62,7 @@ function main() {
     setTimeout(() => {
       loginSection.classList.remove(VISUALHIDDEN_CLASSNAME);
     }, 1000);
+    inputUserName.focus();
     loginSection.addEventListener("submit", onLoginSubmit);
   } else {
     paintGreetings(savedUsername);
@@ -76,7 +78,6 @@ function refresh() {
     mainContents.classList.add(HIDDEN_CLASSNAME);
     main();
   }, 1000);
-
 }
 
 function logout() {
