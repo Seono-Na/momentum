@@ -17,7 +17,7 @@ function doneToDo(event) {
   const li = event.target.parentElement;
   const localToDo = JSON.parse(localStorage.getItem("todos")); //localStorage에서 todos 가지고 와서 새로운 변수에 담아주기
   // localStorage에서 id가 일치하는 부분 찾기 위한 for문
-  for (let i = 0; i < localToDo.length; i++) {
+  for (let i = 0; i < localToDo.length - 1; i++) {
     // 만약 li의 id와 일치한다면
     if (localToDo[i].id === parseInt(li.id)) {
       // done 키의 값을 변경 (0과 1)

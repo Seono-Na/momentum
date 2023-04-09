@@ -82,6 +82,7 @@ function refresh() {
 
 function logout() {
   localStorage.clear();
+  deleteToDoAll();
   refresh();
 }
 
